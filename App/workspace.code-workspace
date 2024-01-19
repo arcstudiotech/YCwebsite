@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "styles"
+		},
+		{
+			"path": "components"
+		},
+		{
+			"path": "lib"
+		}
+	]
+}

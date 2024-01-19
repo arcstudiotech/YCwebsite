@@ -1,0 +1,55 @@
+@import 'variables'
+
+.ScrollingTitle
+    font-size: 200px
+    line-height: 200px
+    font-family: $heading
+    font-weight: bold
+    color: $blue
+    text-align: center
+    height: 200px
+
+    div
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        white-space: nowrap
+        letter-spacing: -5px
+
+        span
+            &:first-child, &:last-child
+                color: white
+                text-shadow: 0 0 1px $blue, 0 0 1px $blue, 0 0 1px $blue, 0 0 1px $blue
+
+    &.green
+        div
+            span
+                &:first-child, &:last-child
+                    color: white
+                    text-shadow: 0 0 1px $green, 0 0 1px $green, 0 0 1px $green, 0 0 1px $green
+
+    &.purple
+        div
+            span
+                &:first-child, &:last-child
+                    color: white
+                    text-shadow: 0 0 1px $purple, 0 0 1px $purple, 0 0 1px $purple, 0 0 1px $purple
+
+
+
+
+
+@media (max-width: 500px)
+
+    .ScrollingTitle
+        font-size: 90px
+        line-height: 90px
+        height: 90px
+
+        div
+            span
+                opacity: 0
+
+                &:nth-child(2)
+                    opacity: 1

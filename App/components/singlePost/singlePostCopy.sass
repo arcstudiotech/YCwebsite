@@ -1,0 +1,116 @@
+@import 'variables'
+
+.single-post-copy
+    width: 70%
+    padding: 0 50px 100px
+
+    p, h2, h3, h4, h5
+        &:first-of-type
+            margin-top: 0
+
+    h2
+        color: $green
+
+    h3
+        font-weight: bold
+
+    blockquote
+        margin: 70px 30px
+        font-size: 20px
+
+        p
+            &:first-child
+                color: $green
+
+                i
+                    font-style: italic
+                    
+                    span
+                        font-style: italic
+
+    div
+        &[id^=attachment]
+            width: calc( 100% + 100px ) !important
+            margin: 50px 0 50px -50px
+
+            .wp-caption-text
+                color: $green
+                font-size: 12px
+                padding: 10px 0
+
+            img
+                width: 100%
+                height: auto
+                display: block
+
+        &.gallery
+            width: calc( 100% + 100px )
+            margin: 50px 0 50px -50px !important
+
+            img
+                width: 100%
+                height: auto
+                display: block
+                border: 0 !important
+
+            .wp-caption-text
+                color: $green
+                font-size: 12px
+                padding: 10px 0
+                text-align: left
+
+            .gallery-item
+                padding: 0 10px 0 0
+
+                &:nth-child(2)
+                    padding: 0 0 0 10px
+
+            &.gallery-columns-3
+                .gallery-item
+                    padding: 0 10px 0 0
+
+                    &:nth-child(3)
+                        padding: 0
+
+    .Cta
+        width: calc( 100% + 100px ) !important
+        margin: 0 0 0 -50px
+
+        .container
+            padding: 0
+
+        &-content 
+            h2, button
+                opacity: 1
+                transform: translateY(0)
+
+            button
+                transition: background-color .2s,color .2s,border-color .2s
+        
+        &-stats
+            ul li
+                opacity: 1
+                transform: translateY(0)
+
+@media(max-width: 500px)
+    .single-post-copy
+        width: 100%
+        padding: 0
+
+        div
+            &[id^=attachment]
+                width: calc( 100% ) !important
+                margin: 48px auto
+
+            &.gallery
+                width: 100% !important
+                margin: 0 !important
+                margin-bottom: 48px !important
+
+                .gallery-item
+                    width: 100% !important
+                    padding: 0 !important
+
+        .Cta
+            width: 100% !important
+            margin: 0 auto !important

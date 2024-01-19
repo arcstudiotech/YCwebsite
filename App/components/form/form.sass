@@ -1,0 +1,88 @@
+@import 'variables'
+    
+.footer-form
+    display: flex
+    flex-direction: column
+    max-width: 70%
+
+    button
+        width: 100px
+
+        &::before, &::after
+            display: none
+
+    input,
+    textarea,
+    select
+        background: $blue
+        border: 1px solid rgba(white, 0.5)
+        padding: 16px
+        font-family: inherit
+        resize: none
+        color: white
+
+        &::placeholder
+            color: rgba(white, 0.5)
+
+
+        &:not(:last-child)
+            margin-bottom: 16px
+
+        &:placeholder
+            color: rgba(white, 0.5)
+            font-size: 12px
+
+    
+    .react-select-container
+        .react-select__control
+            background: $blue
+            border-radius: 0
+            margin-bottom: 16px
+            border: 1px solid rgba(white, 0.5)
+
+            .react-select__value-container
+                .react-select__placeholder
+                    color: rgba(white, 0.5)
+                    font-size: 12px
+                    padding-left: 6px
+
+                .react-select__single-value
+                    color: white
+                    padding-left: 6px
+                    font-size: 12px
+
+            .react-select__indicators
+                color: white
+
+                span
+                    display: none
+
+                .react-select__dropdown-indicator
+                    color: rgba(white, 0.5)
+
+                    i
+                        color: rgba(white, 0.5)
+                        z-index: 999
+                        padding-right: 12px
+                        transition: 0.2s
+
+            &:hover .react-select__dropdown-indicator   
+                 i
+                    color: white
+
+
+        .react-select__menu
+
+            .react-select__menu-list
+                color: $blue
+
+                .react-select__option
+                    font-size: 12px
+                    padding-left: 16px
+
+                    &:hover
+                        background-color: $green
+
+                    &--is-selected
+                        color: $blue
+                        font-weight: bold

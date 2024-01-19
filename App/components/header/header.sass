@@ -1,0 +1,105 @@
+@import 'variables'
+
+.header
+    height: 90px
+    background-color: $tan
+    border-bottom: 1px solid $midGrey
+    display: flex
+    z-index: 3
+    transition: 0.3s
+
+    &.appearance-dark
+        background-color: black
+
+        .header-logo
+            svg
+                fill: white
+
+        .header-appearance
+            border: 1px solid white
+
+            &::after
+                background-color: white
+
+    &-logo
+        width: 45%
+        height: 100%
+        border-right: 1px solid $midGrey
+        display: flex
+        align-items: center
+        padding-left: 50px
+
+        svg
+            display: block
+            width: auto
+            height: 52px
+            transition: 0.3s
+
+    &-controls
+        width: 55%
+        height: 100%
+        padding-right: 50px
+        display: flex
+        justify-content: flex-end
+        align-items: center
+
+    &-appearance
+        width: 30px
+        height: 30px
+        border: 1px solid $grey
+        border-radius: 50%
+        overflow: hidden
+        cursor: pointer
+        transition: 0.3s
+
+        &::after
+            content: ''
+            display: block
+            width: calc( 100% + 2px )
+            height: calc( 100% + 2px )
+            position: absolute
+            top: 15px
+            left: -1px
+            background-color: $grey
+            transform: rotate(-45deg)
+            transform-origin: top
+            transition: 0.3s
+
+
+
+
+
+@media(max-width: 1020px)
+
+    .header
+        height: 60px
+
+        &-logo
+            padding-left: 30px
+            border: 0
+
+            svg
+                height: 40px
+
+        &-controls
+            padding-right: 30px
+
+        &-appearance
+            width: 20px
+            height: 20px
+
+            &::after
+                top: 10px
+
+
+
+
+
+@media(max-width: 768px)
+
+    .header
+        &-logo
+            padding-left: 15px
+
+        &-controls
+            padding-right: 15px

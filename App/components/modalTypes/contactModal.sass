@@ -1,0 +1,400 @@
+@import 'variables'
+
+.modal.visible .contact-modal
+    opacity: 1
+    pointer-events: all
+
+    .inner
+        form, aside
+            opacity: 1
+            transform: translateY(0px)
+    
+.contact-modal
+    background-color: transparentize($darkBlue, 0.1)
+    position: fixed
+    top: 0px
+    left: 0px
+    width: 100%
+    height: 100%
+    z-index: 99
+    display: block
+    color: white
+    margin: 0px
+    padding: 0px
+    border: none
+    font-weight: 300
+    pointer-events: none
+    opacity: 0
+    transition: 0.5s
+    overflow: auto
+
+    .close-modal
+        position: absolute
+        right: 64px
+        top: 32px
+        margin: 0
+        border: 1px solid white
+        background: transparent
+        color: white
+        font-size: 32px
+        padding: 0px
+        width: 52px
+        height: 52px
+        line-height: 55px
+        border-radius: 50%
+        opacity: 0.7
+        z-index: 1
+        transition: 0.2s
+
+        &:hover
+            opacity: 1
+            cursor: pointer
+
+    .inner
+        display: block
+        margin: auto
+        padding: 0px 200px
+        display: -ms-grid
+        -ms-grid-columns: 40% 60%
+        margin: 150px 0px 100px
+
+        @supports(display: grid)
+            display: grid
+            grid-template-columns: 40% 60%
+
+        form, aside
+            opacity: 0
+            transform: translateY(15px)
+            transition: 0.8s
+            transition-delay: 0.3s
+
+        form
+            -ms-grid-column: 2 
+            transition-delay: 0.45s
+
+            .loader-container
+                position: absolute
+                top: 0px
+                left: 0px
+                width: 100%
+                height: 100%
+                z-index: 3
+
+                .loader
+                    top: 50%
+                    margin: auto
+                    transform: translateY(-50%)
+
+            .cover-loader
+                transition: 0.3s
+                opacity: 1
+
+                &.loading
+                    opacity: 0.2
+                    pointer-events: none
+
+            ul
+                list-style: none
+                padding: 0px
+                margin: 0px
+                margin-top: 40px
+
+                label
+                    display: block
+                    margin-bottom: 5px
+                    letter-spacing: 1px
+
+                input, textarea
+                    width: 100%
+                    border: none
+                    background: transparent
+                    color: white
+                    font-size: 20px
+                    padding: 15px
+                    font-weight: 300
+                    transition: 0.15s
+                    border-radius: 0
+                    appearance: none
+                    -webkit-appearance: none
+
+                    &:focus, &:hover
+                        border-color: white
+
+                input
+                    border-bottom: 1px solid rgba(255,255,255,0.3)
+                    padding-left: 0px
+                    padding-top: 0px
+                    margin-top: 12px
+                    margin-bottom: 32px
+                    padding-bottom: 8px
+
+                    &::placeholder
+                        color: white
+                        opacity: 0.5
+
+                textarea
+                    border: 1px solid rgba(255,255,255,0.3)
+                    min-height: 150px
+                    resize: none
+                    margin-top: 10px
+                    padding-top: 18px
+                    transition: border-color 0.15s, background 0.3s
+                    background: rgba(0,0,0,0)
+                    font-family: $copy
+
+                    &:focus
+                        background: rgba(0,0,0,0.3)
+
+                .react-select-container
+                    margin-bottom: 32px
+
+                    > div
+                        background: transparent
+                        border: none
+                        border-radius: 0
+                        border-bottom: 1px solid rgba(255,255,255,0.3)
+                        height: 44px
+
+                        > div
+                            padding: 0px 0px
+                            font-size: 20px
+                            color: white
+                            
+                            .react-select__placeholder
+                                color: white
+                                opacity: 0.5
+                                padding-bottom: 28px
+
+                            .react-select__single-value
+                                color: white
+                                bottom: -24px
+
+                            .react-select__indicator-separator
+                                visibility: hidden
+
+                            .react-select__indicator
+                                height: 32px
+                                width: 32px
+                                transition: 0.2s
+                                opacity: 0.5
+                                bottom: 16px
+
+                    .react-select__menu
+                        border-radius: 0px
+                        background: $blue
+                        height: auto
+
+                        .react-select__menu-list
+                            border-radius: 0px
+                            cursor: pointer
+
+                            .react-select__option
+                                border-radius: 0px
+
+                                &--is-focused
+                                    background: $blue
+
+                                &--is-selected
+                                    background: darken($blue, 10%)
+
+                    &:hover
+                        >div
+                            border-bottom: 1px solid white
+
+                        .react-select__indicator
+                            opacity: 1
+
+                .radios
+                    margin-top: 8px
+
+                    &>span
+                        margin-right: 15px
+
+                    span, div, label
+                        display: inline-block
+                        font-size: 20px
+
+                    label
+                        input
+                            opacity: 0
+                            position: absolute
+                            height: 0px
+                            width: 0px
+                            top: 0px
+                            left: 0px
+
+                            &:checked + span
+                                opacity: 1
+                                text-shadow: 0px 0px 12px rgba(255,255,255,0.7)
+
+                        span
+                            opacity: 0.5
+                            transition: 0.2s
+                            text-transform: uppercase
+                            font-weight: 500
+                            font-size: 16px
+                            padding: 10px
+                            text-shadow: 0px 0px 12px rgba(255,255,255,0)
+
+                            &:hover
+                                opacity: 1
+
+                .row
+                    margin-bottom: 30px
+
+                    &.columns-2
+                        display: -ms-grid
+                        -ms-grid-columns: 1fr 1fr
+
+                        @supports(display: grid)
+                            display: grid
+                            grid-template-columns: 1fr 1fr
+                            gap: 30px
+
+                        div
+                            &:nth-child(1)
+                                -ms-grid-column: 1
+                                margin-right: 30px
+
+                                @supports(display: grid)
+                                    margin-right: 0
+
+                            &:nth-child(1)
+                                -ms-grid-column: 2
+                                width: calc(100% - 30px)        
+
+                                @supports(display: grid)
+                                    width: 100%     
+                                
+
+                    &.columns-1, &.columns-2
+                        margin-bottom: 8px
+
+            .bottom-row
+                .validate-response
+                    float: left
+                    transition: 0.3s
+                    opacity: 0
+                    transform: translateX(-20px)
+
+                    &.visible
+                        opacity: 1
+                        transform: translateX(0px)
+
+                    .fe
+                        display: inline-block
+                        margin-right: 10px
+
+                        &.fe-x
+                            color: red
+
+                .button
+                    float: right
+
+        aside
+            -ms-grid-column: 1
+            padding-right: 60px
+
+            h4
+                font-weight: 300
+                margin-bottom: 10px
+
+            .copy
+                margin: 42px 0
+                color: rgba(255,255,255,0.7)
+                font-size: 20px
+
+                p
+                    line-height: 1.6
+
+            a
+                color: white
+                font-size: 20px
+
+
+
+
+
+@media(max-width: 500px)
+
+    .contact-modal
+        .close-modal
+            right: 20px
+
+        &::after
+            height: 300px
+            width: 100vw
+
+        .inner
+            margin: 50px 0px 0
+            padding: 0 20px 60px
+            display: flex
+            flex-direction: column-reverse
+            overflow: hidden
+
+            &::after
+                content: ''
+                background-image: url('/images/contact-bg.png')
+                background-size: 600px
+                background-position: bottom left
+                background-repeat: no-repeat
+                height: 200px
+                width: 60%
+                position: absolute
+                bottom: 0
+                right: -130px
+
+            aside
+                padding-right: 0
+                margin-top: 30px
+
+                h1
+                    display: none
+
+                .copy
+                    font-size: 20px
+
+                    &:nth-of-type(2)
+                        font-size: 24px
+
+                a
+                    font-size: 24px
+
+            form
+                &::before
+                    content: 'Get in touch'
+                    font-size: 40px
+
+                ul
+                    label
+                        font-size: 16px
+
+                    input
+                        font-size: 24px
+
+                    .react-select-container
+                        > div
+                            height: 52px
+
+                            > div
+                                font-size: 24px
+
+                .columns-2
+                    grid-template-columns: 1fr !important 
+                    gap: 0 !important
+
+                .bottom-row
+                    button
+                        margin-top: 16px
+                        background: rgba(white, 0.7)
+                        width: 100%
+                        justify-content: center
+                        color: $green
+
+                        svg
+                            path
+                                stroke: $green
+
+                .button
+                    font-size: 26px
+                    line-height: 32px

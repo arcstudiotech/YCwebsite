@@ -1,0 +1,150 @@
+@import 'variables'
+
+.Splash
+    height: calc( 100vh - 90px )
+    display: flex
+    flex-wrap: wrap
+
+    &-images
+        width: 45%
+        height: 100%
+        border-right: 1px solid $midGrey
+
+        &::before
+            content: ''
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 1
+
+        &-item
+            width: 100%
+            height: calc( 100vh - 90px )
+            background-size: cover
+            background-position: center
+
+        > svg
+            display: block
+            width: 276px
+            height: 294px
+            position: absolute
+            top: 50%
+            left: 50%
+            z-index: 2
+            margin: -147px 0 0 -138px
+
+    &-content
+        width: 55%
+        max-width: 900px
+        height: 100%
+        padding: 50px
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+
+    &-details
+        margin: 1vw 0 0
+
+    &-title
+        color: black
+        transition: 0.3s
+
+        > *
+            &:first-child
+                margin-top: 0
+
+    &-copy
+        margin: 3vw 0 0
+
+        > *
+            &:first-child
+                margin-top: 0
+
+    &-contact
+        display: flex
+        
+        p
+            margin: 0
+
+        > div
+            margin: 0 40px 0 0
+
+            &:last-child
+                margin: 0
+
+        a
+            transition: 0.3s
+
+.appearance-dark
+    .Splash
+        &::after
+            background-color: black
+
+        &-title
+            color: $lightGrey
+
+        &-details
+            a
+                color: $lightGrey
+
+
+
+
+
+@media(max-width: 1020px)
+
+    .Splash
+        height: calc( 100vh - 60px )
+
+        &-images
+            width: 30%
+
+            &-item
+                width: 100%
+                height: calc( 100vh - 60px )
+
+            > svg
+                width: 132px
+                height: 140px
+                margin: -70px 0 0 -66px
+
+        &-content
+            width: 70%
+
+
+
+
+@media(max-width: 768px)
+
+    .Splash
+        height: auto
+
+        &::after
+            content: ''
+            display: block
+            width: 100%
+            height: 3px
+            background-color: $tan
+            position: absolute
+            bottom: -2px
+            left: 0
+            transition: 0.3s
+        
+        &-images
+            width: 100%
+            height: 400px
+            border-right: 0
+
+            &-item
+                height: 400px
+
+        &-content
+            width: 100%
+            height: auto
+            padding: 30px 15px
+
+        &-copy
+            margin: 50px 0 0
