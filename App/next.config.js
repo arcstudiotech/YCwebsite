@@ -1,9 +1,6 @@
 const path = require('path')
-const withPlugins = require('next-compose-plugins')
-const withStyles = require('@webdeb/next-styles')
-const withTM = require('next-transpile-modules')(['jarallax', 'video-worker', 'locomotive-scroll'])
 
-module.exports = withPlugins([withStyles, withTM],{
+module.exports = {
   sass: true,
   sassLoaderOptions: {
     sassOptions: {
@@ -32,6 +29,16 @@ module.exports = withPlugins([withStyles, withTM],{
       }
     })
 
+    config.module.rules.forEach((rule) => {
+      const { oneOf } = rule;
+      if (oneOf) {
+        oneOf.forEach((one) => {
+          if (!`${one.issuer?.and}`.includes('_app')) return;
+          one.issuer.and = [path.resolve(__dirname)];
+        });
+      }
+    })
+
     return config
   }
-})
+}
