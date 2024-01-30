@@ -1,6 +1,6 @@
 export default (
+ <a href="https://arc-studio.com.au">
   <svg xmlns="http://www.w3.org/2000/svg" width="287.045" height="103.103" viewBox="0 0 287.045 103.103">
-  <a href="https://arc-studio.com.au">
     <g id="Group_24" transform="translate(0 0)">
       <g id="Group_9" transform="translate(0 0)">
         <g id="Group_1" transform="translate(0 0)">
@@ -29,6 +29,6 @@ export default (
         </g>
       </g>
     </g>
-  </a>
   </svg>
+ </a>
 )
