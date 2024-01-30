@@ -28,6 +28,7 @@ export default function Header () {
             <div className="header-logo" >
                 { Logo }
             </div>
+            <div>
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn">Dropdown</button>
                   <div id="myDropdown" class="dropdown-content">
@@ -38,6 +39,7 @@ export default function Header () {
             </div>
             <div className="header-controls">
                 <div className="header-appearance" onClick={ changeAppearance } />
+            </div>
             </div>
         </header>
     )
