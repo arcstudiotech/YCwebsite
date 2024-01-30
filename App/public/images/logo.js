@@ -29,5 +29,6 @@ export default (
         </g>
       </g>
     </g>
+  </a>
   </svg>
 )
