@@ -26,8 +26,7 @@ export default function Header () {
     return (
         <header className={`header appearance-${appearance}`}>
             <div className="header-logo">
-                { Logo }
-                <a href="https://arc-studio.com.au"></a>
+                { Logo <a href="https://arc-studio.com.au"></a> }
             </div>
             <div className="header-controls">
                 <div className="header-appearance" onClick={ changeAppearance } />
