@@ -36,7 +36,6 @@ export default function Header () {
                     <a href="#">Link 2</a>
                     <a href="#">Link 3</a>
                  </div>
-            </div>
             <div className="header-controls">
                 <div className="header-appearance" onClick={ changeAppearance } />
             </div>
