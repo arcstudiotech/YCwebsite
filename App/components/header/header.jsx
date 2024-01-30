@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { MainContext } from 'lib/context'
 
 import Logo from 'public/images/logo'
+import Button from 'components/button'
 
 import './header.sass'
 
@@ -29,6 +30,7 @@ export default function Header () {
                 { Logo }
             </div>
             <div>
+                 { Button }
             <div class="dropdown">
               <button onclick="myFunction()" class="dropbtn">Dropdown</button>
                   <div id="myDropdown" class="dropdown-content">
