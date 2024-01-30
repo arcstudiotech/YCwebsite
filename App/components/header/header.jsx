@@ -30,12 +30,11 @@ export default function Header () {
                 { Logo }
             </div>
             <div>
-
             <div className="header-controls">
-                <div className="button" onClick={ children } />
+                <div className="Button" onClick={ children } />
                 </div>
                 <div className="header-appearance" onClick={ changeAppearance } />
-            </div>
+                </div>
             </div>
         </header>
     )
